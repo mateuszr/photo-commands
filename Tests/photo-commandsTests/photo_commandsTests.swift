@@ -29,10 +29,12 @@ final class photo_commandsTests: XCTestCase {
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let output = String(data: data, encoding: .utf8)
 
-        let defaultOutput = "Error: Please use '-l' to list albums or '-c' to count photos or '-f' or '-d' or '-L' with 'albumId' argument
+        let defaultOutput = """
+Error: Please use '-l' to list albums or '-c' to count photos or '-f' or '-d' or '-L' with 'albumId' argument
 Usage: photo-commands [--list] [--count] [--list-photos] [--find-non-apple-photos] [--find-duplicates] [--silent] [<album-id>]
-  See 'photo-commands --help' for more information."
-        XCTAssertEqual(output, defaultOutput)
+        See 'photo-commands --help' for more information.
+"""
+        XCTAssertEqual(output?.trimmingCharacters(in: [" "]), defaultOutput)
         #endif
     }
 

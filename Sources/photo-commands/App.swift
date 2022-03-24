@@ -104,9 +104,18 @@ func allAlbums() {
     
     for i in 1..<resultsAllAlbums.count {
         let x = resultsAllAlbums.object(at: i)
+        var startDateString:String = ""
+        var endDateString:String = ""
+        
+        if let startDate:Date = x.startDate {
+            startDateString = String(describing: startDate)
+        }
+        if let endDate:Date = x.endDate {
+            endDateString = String(describing: endDate)
+        }
         
         //printing album properties
-        print("id: \(x.localIdentifier)\tcount: \(x.estimatedAssetCount)\tstart date: \(String(describing: x.startDate!))\tend date: \(x.endDate!)\tname: \(x.localizedTitle!)")
+        print("id: \(x.localIdentifier)\tcount: \(x.estimatedAssetCount)\tstart date: \(startDateString)\tend date: \(endDateString)\tname: \(x.localizedTitle ?? "")")
     }
 }
 
