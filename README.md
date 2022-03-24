@@ -23,7 +23,7 @@ First of all: you can't select a custom Photo Library. The tool will use your de
 To get the list of albums run with `-l` option:
 
 ```
-PhotoCommands -l
+$ photo-commands -l
 Listing all albums
 id: F80678A7-3D3C-4838-B7C6-B30568BE1895/L0/040    count: 534    start date: 2020-07-05 14:34:12 +0000    end date: 2020-07-05 19:39:06 +0000    name: First Album
 id: 8FD96F38-2122-4083-B28A-0BE6130830DE/L0/040    count: 1    start date: 2011-12-13 11:52:02 +0000    end date: 2011-12-13 11:52:02 +0000    name: Second Album
@@ -32,7 +32,7 @@ id: 64B794FB-F8EC-4D66-9696-177B4833104C/L0/040    count: 1    start date: 2011-
 
 Now, having the id of your album you can e.g. find all duplicates in your album of choice:
 ```
-PhotoCommands -d "F80678A7-3D3C-4838-B7C6-B30568BE1895/L0/040"
+$ photo-commands -d "F80678A7-3D3C-4838-B7C6-B30568BE1895/L0/040"
 ```
 
 *Note that before that it is best if you have no favourite photos in the album. The command will mark duplicates as favourites.*
