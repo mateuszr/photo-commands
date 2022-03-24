@@ -16,6 +16,22 @@ If one of those options is selected, the action is performed in the chosen photo
 When scanning for duplicates, only duplicate photo(s) will be marked as favourite, the orginal one will not be marked as favourite. The "original one" is simply the first one encountered (the oldest added to the Library).
 
 
+# Building
+
+You need to have xcode and `swift` command.
+To build the executable run the following:
+```
+git clone git@github.com:mateuszr/photo-commands.git
+cd photo-commands
+swift build
+```
+
+Running:
+```
+.build/x86_64-apple-macosx/debug/photo-commands -h
+```
+
+
 # Sample usage
 
 First of all: you can't select a custom Photo Library. The tool will use your default  (system) Photos library. You can change the system Photos library in Photos app preferences.
@@ -30,18 +46,16 @@ id: 8FD96F38-2122-4083-B28A-0BE6130830DE/L0/040    count: 1    start date: 2011-
 id: 64B794FB-F8EC-4D66-9696-177B4833104C/L0/040    count: 1    start date: 2011-12-26 03:04:12 +0000    end date: 2011-12-26 03:04:12 +0000    name: Some other Album
 ```
 
-Now, having the id of your album you can e.g. find all duplicates in your album of choice:
+Now, having the id of your album you can e.g. find all duplicates:
 ```
 $ photo-commands -d "F80678A7-3D3C-4838-B7C6-B30568BE1895/L0/040"
 ```
 
-*Note that before that it is best if you have no favourite photos in the album. The command will mark duplicates as favourites.*
-Now you can go to Photos, show only favourites, select all and remove them.
+*Note that before that it is best if you have no favourite photos in the album. The command will mark all duplicates as favourites.*
+After that you can go to Photos, select your album, select "show only favourites", and then select all and remove them.
 
 
-
-
-#  Command line agruments
+#  Command-line agruments
 
 ```
 USAGE: photo-commands [--list] [--count] [--list-photos] [--find-non-apple-photos] [--find-duplicates] [--silent] [<album-id>]
